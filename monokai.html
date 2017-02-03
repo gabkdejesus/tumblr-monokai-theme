@@ -3,6 +3,9 @@
 <head>
 	<title>{Title}</title>
 	<link rel="shortcut icon" href="{Favicon}">
+    <script type="text/javascript" 
+        src="http://static.tumblr.com/thkxlxp/gs4oksb9i/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="scroll.js"></script>
 	<!-- Meta: Colors-->
 	<!-- Meta: Images-->
 	<meta name="image:Sidebar" content="http://static.tumblr.com/thkxlxp/fyfokqj25/__original_drawn_by_nanahime_aoi__b1c70a2cc737685150f72df083d8a7c5.png">
@@ -11,17 +14,28 @@
 	    @import url('https://fonts.googleapis.com/css?family=News+Cycle');
 	    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 	    
+	    
 		body {
 			background-color: #27261F;
 			margin: 0;
 			color: #767676;
 		}
-        
         header {
             padding-bottom: 40.3px;
             position: relative;
         }
         
+        .tabbackground {
+        	z-index: 1;
+        	width: 100%;
+        	height: 41px;
+        	position: fixed;
+        	left: 0;
+        	right: 0;
+        	top: 0;
+        	background-color: #27261F;
+        }
+
 		.tab_container {
 			position: fixed;
 			z-index: 2;
@@ -390,6 +404,7 @@
 	</style>
 </head>
 <body>
+	<span class="tabbackground"></span>
 	<div class="sidebarcontainer">
 	<header>
 		<div class="tab_container">
@@ -739,10 +754,5 @@
 		{/block:Video}
     	{/block:Posts}
 	</div>
-	<script type="text/javascript">
-		function toggle_visible(id) {
-
-		}
-	</script>
 </body>
 </html>
