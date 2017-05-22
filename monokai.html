@@ -3,22 +3,42 @@
 <head>
 	<title>{Title}</title>
 	<link rel="shortcut icon" href="{Favicon}">
+	<!--Scripts-->
     <script type="text/javascript" 
         src="http://static.tumblr.com/thkxlxp/gs4oksb9i/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="http://static.tumblr.com/thkxlxp/Huvoksei6/scroll.js"></script>
 	<!-- Meta: Colors-->
+	<meta name="color:Title" content="#82c4ec">
+	<meta name="color:Body" content="#82c4ecF">
+	<meta name="color:Date and Notes" content="#FFFFFF">
+	<!-- Meta: Fonts-->
+	<meta name="text:Title Font" content="News Cycle">
+    <link href="https://fonts.googleapis.com/css?family={text:Title Font}" rel="stylesheet" type="text/css">
+	<meta name="text:Body Font" content="Inconsolata">
+	<link href="https://fonts.googleapis.com/css?family={text:Body Font}" rel="stylesheet" type="text/css">
+	<meta name="text:Search Button Font" content="Inconsolata">
+	<link href="https://fonts.googleapis.com/css?family={text:Search Button Font}" rel="stylesheet" type="text/css">
+	<meta name="text:Search Input Font" content="Inconsolata">
+	<link href="https://fonts.googleapis.com/css?family={text:Search Input Font}" rel="stylesheet" type="text/css">
+	<meta name="text:Description Font" content="Inconsolata">
+	<link href="https://fonts.googleapis.com/css?family={text:Description Font}" rel="stylesheet" type="text/css">
 	<!-- Meta: Images-->
 	<meta name="image:Sidebar" content="http://static.tumblr.com/thkxlxp/fyfokqj25/__original_drawn_by_nanahime_aoi__b1c70a2cc737685150f72df083d8a7c5.png">
 	<!-- Meta: Links-->
+	<meta name="text:link 1" content="Link 1">
+	<meta name="text:link 1 url" content="">
+	<meta name="text:link 2" content="Link 2">
+	<meta name="text:link 2 url" content="">
+	<meta name="text:link 3" content="Link 3">
+	<meta name="text:link 3 url" content="">
+	<meta name="text:link 4" content="Link 4">
+	<meta name="text:link 4 url" content="">
+	
 	<style>
-	    @import url('https://fonts.googleapis.com/css?family=News+Cycle');
-	    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
-	    
 	    
 		body {
 			background-color: #27261F;
 			margin: 0;
-			color: #767676;
 		}
         header {
             padding-bottom: 40.3px;
@@ -107,17 +127,18 @@
 		}
 		
 		.search_button {
-		    font-family: "Inconsolata";
+		    font-family: "{text:Search Button Font}";
             border: none;
             cursor: pointer;
 		}
 		
 		.search_input {
-		    font-family: "Inconsolata";
+		    font-family: "{text:Search Input Font}";
 		    border: 1px solid gray;
 		    background: #363636;
 		    color: white;
 		    font-size: 12px;
+		    max-width: 134px;
 		}
 		
 		.search > form > a > .pagination {
@@ -166,6 +187,8 @@
 		}
 
 		#sidebarunder > p {
+		    font-family: "{text:Description Font}";
+		    font-size: 14px;
 			text-align: justify;
 			margin: 0 auto;
 			width: 200px;
@@ -189,7 +212,28 @@
 			transition: 0.5s;
 			cursor: pointer;
 		}
-
+        
+        /* Tags CSS*/
+        
+        .tags {
+            max-width: 600px;
+            list-style-type: none;
+        }
+        
+        .tags > li {
+            padding-left: 10px;
+            display: inline-block;
+            padding-bottom: 0px;
+            margin: 0px;
+		    max-width: 600px;
+        }
+        
+        .tags > li > a {
+            color: {color:Date and Notes};
+            font-size: 12px;
+            text-decoration: none;
+        }
+        
 		/*Post Container*/
 		.post_container {
 		    min-width: 700px;
@@ -203,34 +247,40 @@
 		    width: 600px;
 		    margin: 0px auto 0px auto;
 		    padding-top: 1px;
-		    padding-bottom: 30px;
+		    color: {color:Body};
 		}
 		
 		.title {
-		    font-family: "News Cycle";
+		    color: {color:Title};
+		    font-family: "{text:Title Font}";
 		    font-size: 22px;
 		    margin: 0px;
-		    margin-top: 10px;
+		    margin-top: 20px;
 		    margin-bottom: 5px;
 		}
 		
+		.text_body {
+		    font-size: 14px;
+		}
+		
 		.text_body p {
-		    font-family: "Inconsolata";
+		    color: {color:Body};
+		    font-family: "{text:Body Font}";
 		    margin: 0;
 		    margin-top: 10px;
 		}
 		
 		.text_body a {
+		    color: {color:Body};
 		    text-decoration: none;
-		    color: #767676;
 		}
 		
 		.body {
-		    font-family: "Inconsolata";
+		    font-family: "{text:Body Font}";
 		}
 		
 		.body p {
-		    font-family: "Inconsolata";
+		    font-family: "{text:Body Font}";
 		    margin: 0;
 		    margin-top: 5px;
 		}
@@ -240,10 +290,14 @@
 		    color: #767676;
 		}
 		
+		.body h2 {
+		    margin: 0px;
+		}
+		
 		blockquote {
-		    font-family: "Inconsolata";
+		    font-family: "{text:Body Font}";
 		    margin: 0;
-			border-left: 2px solid #767676;
+			border-left: 2px solid {color:Body};
 			padding-left: 20px;
 			margin-left: 10px;
 		}
@@ -313,7 +367,7 @@
 		    list-style-type: none;
 		    margin: 0;
 		    padding: 0;
-		    font-family: "Inconsolata";
+		    font-family: "{text:Body Font}";
 		}
 		
 		.audio_body li {
@@ -333,12 +387,14 @@
 		
 		/*Notes and Post Info*/
 		.post_source {
+		    max-width: 600px;
 		    font-size: 12px;
 		    list-style: none;
 		    padding: 10px 0px 0px 10px;
 		    padding-left: 0px;
 		    border-top: 1px solid #767676;
 		    margin: 0px;
+		    margin-left: 50px;
 		    margin-top: 10px;
 		}
 		
@@ -349,8 +405,52 @@
 		
 		.post_source li a {
 		    text-decoration: none;
-		    color: white;
+            color: {color:Date and Notes};
 		}
+
+		/*Ask Posts*/
+		.ask {
+			margin-top: 20px;
+			background-color: #272727;
+		    font-family: "{text:Body Font}";
+		}
+		
+		.askbody > b > a {
+		    color: #767676;
+		}
+		
+		.askbody > b > a:hover {
+		    color: white;
+		    transition: 0.5s;
+		}
+		
+		.answer {
+		   padding-left: 10px;
+		   padding-top: 10px;
+		   padding-bottom: 20px;
+		}
+		
+		.asker {
+		    text-decoration: none;
+		}
+
+		.askpic {
+		    border-left: 3px solid #272727;
+		    border-top: 3px solid #272727;
+		}
+		
+		.askbody {
+		    vertical-align: top;
+		    margin-top: 25px;
+		    display: inline-block;
+		}
+		
+		.answer > :first-child {
+		    margin-top: 0px;
+		    margin-bottom: 0px;
+		}
+		
+		
 		
 		/*Like and Reblog Buttons*/
 		.like_reblog {
@@ -368,6 +468,11 @@
 		    border-bottom: 20px solid transparent;*/
 		    height: 60px;
 		    width: 0;
+		}
+		
+		.like_reblog_new {
+		    float: right;
+		    padding: 0px;
 		}
 		
 		.like_reblog ul {
@@ -407,18 +512,18 @@
 	<div class="sidebarcontainer">
 	<header>
 		<div class="tab_container">
-			<a href="#" title="Test"><span>Link 1</span><img src="http://68.media.tumblr.com/b30405d855cde9ab96b188acbef69ba7/tumblr_okc77aMfYB1vdk9zko1_400.png"></a>
-			<a href="#" title="Test"><span>Link 2</span><img src="http://68.media.tumblr.com/b30405d855cde9ab96b188acbef69ba7/tumblr_okc77aMfYB1vdk9zko1_400.png"></a>
-			<a href="#" title="Test"><span>Link 3</span><img src="http://68.media.tumblr.com/b30405d855cde9ab96b188acbef69ba7/tumblr_okc77aMfYB1vdk9zko1_400.png"></a>
-			<a href="#" title="Test"><span>Link 4</span><img src="http://68.media.tumblr.com/b30405d855cde9ab96b188acbef69ba7/tumblr_okc77aMfYB1vdk9zko1_400.png"></a>
-			<a href="http://www.google.com" title="Theme Source" target="_blank"><span>Theme</span><img src="http://68.media.tumblr.com/b30405d855cde9ab96b188acbef69ba7/tumblr_okc77aMfYB1vdk9zko1_400.png"></a>
+			<a href="{text:link 1 url}" title="{text:link 1}" target="_blank"><span>{text:link 1}</span><img src="http://static.tumblr.com/thkxlxp/Q8Nolwwmd/x_mark_icon.png"></a>
+			<a href="{text:link 2 url}" title="{text:link 2}" target="_blank"><span>{text:link 2}</span><img src="http://static.tumblr.com/thkxlxp/Q8Nolwwmd/x_mark_icon.png"></a>
+			<a href="{text:link 3 url}" title="{text:link 3}" target="_blank"><span>{text:link 3}</span><img src="http://static.tumblr.com/thkxlxp/Q8Nolwwmd/x_mark_icon.png"></a>
+			<a href="{text:link 4 url}" title="{text:link 4}" target="_blank"><span>{text:link 4}</span><img src="http://static.tumblr.com/thkxlxp/Q8Nolwwmd/x_mark_icon.png"></a>
+			<a href="https://www.quillot.tumblr.com" title="Theme by Quillot" target="_blank"><span>Theme</span><img src="http://static.tumblr.com/thkxlxp/Q8Nolwwmd/x_mark_icon.png"></a>
 			
 			<div class="search">
             	<form action="/search" method="get">
                     <input type="text" name="q" value="{SearchQuery}" autocomplete="off" class="search_input">
                     <input type="submit" value="Search" class="search_button">
                     <a href="/" title="Home"><img src="https://68.media.tumblr.com/ce62d609e734dcca2fbe6baddf911434/tumblr_okfcd7F0fk1vdk9zko1_r1_540.png"></a>
-                    <a href="/ask" title="Ask"><img src="https://68.media.tumblr.com/6c78c6572352d956a29129ced9e61df2/tumblr_oklhjq5xQF1vdk9zko1_r1_400.png"></a>
+                    {block:AskEnabled}<a href="/ask" title="Ask"><img src="https://68.media.tumblr.com/6c78c6572352d956a29129ced9e61df2/tumblr_oklhjq5xQF1vdk9zko1_r1_400.png"></a>{/block:AskEnabled}
                     {block:Pagination}
 					    {block:PreviousPage}<a href="{PreviousPage}" title="Previous Page"><img class="pagination" src="http://68.media.tumblr.com/2c32bb896637728c876892f5c49afdaf/tumblr_okqb4wAaJY1vdk9zko2_75sq.png"></a>{/block:PreviousPage}
 					    {block:NextPage}<a href="{NextPage}" title="Next Page"><img class="pagination" src="http://68.media.tumblr.com/d9e52b821b0226562ab4da388a6246f3/tumblr_okqb4wAaJY1vdk9zko1_75sq.png"></a>{/block:NextPage}
@@ -460,31 +565,9 @@
 
         			<span class="text_body">{Body}</span>
 
-        			<div class="like_reblog">
-        			    <ul>
-        			        <li>{ReblogButton color="white" size="13"}</li>
-        			        <li>{LikeButton color="white" size="13"}</li>
-        			    </ul>
-        			</div>
-
-        			<ul class="post_source">
-		    			<li><a href="{Permalink}">{block:Date}Posted {Month} {DayOfMonthWithZero}, {Year}{/block:Date}</li></a>
-		    			{block:NoteCount}
-		    			    <li>|</li>
-		    			    <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
-		    			{/block:NoteCount}
-		    			
-		    			{block:ContentSource}
-		    			    <li>|</li>
-		    				<li><a href="{SourceURL}" title="{SourceTitle}">Source</a></li>
-		    			{/block:ContentSource}
-					</ul>
-                    
-                    <div class="post_notes">
-			            {block:PostNotes}<br>{PostNotes}{/block:PostNotes}
-			        </div>
+        			
     			</div>
-    		<div class="divider_div"><span class="divider"></span></div>
+    		
     		{/block:Text}   
     		<!--End Text Posts-->
     		
@@ -497,32 +580,9 @@
     		        <span class="body">
     		            {block:Caption}{Caption}{/block:Caption}
     		        </span>
-    		        
-    		        <div class="like_reblog">
-        			    <ul>
-        			        <li>{ReblogButton color="white" size="13"}</li>
-        			        <li>{LikeButton color="white" size="13"}</li>
-        			    </ul>
-        			</div>
-    		        
-    		        <ul class="post_source">
-    	    			<li><a href="{Permalink}">{block:Date}Posted {Month} {DayOfMonthWithZero}, {Year}{/block:Date}</li></a>
-    	    			{block:NoteCount}
-    	    			    <li>|</li>
-    	    			    <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
-    	    			{/block:NoteCount}
-    	    			
-    	    			{block:ContentSource}
-    	    			    <li>|</li>
-    	    				<li><a href="{SourceURL}" title="{SourceTitle}">Source</a></li>
-    	    			{/block:ContentSource}
-    				</ul>
-    			
-    				<div class="post_notes">
-    				    {block:PostNotes}<br>{PostNotes}{/block:PostNotes}
-    				</div>
+    				
+    				
     			</div>
-    		<div class="divider_div"><span class="divider"></span></div>
     		{/block:Photo}
     		<!--End Image Posts-->
     		
@@ -743,14 +803,103 @@
     		<div class="post">
     			{Video-500}
     			{block:Caption}{Caption}{/block:Caption}
-    			<ul class="like-reblog">
-    				<li>{LikeButton}</li>
-    				<li>{ReblogButton}</li>
-    				<li>{block:NoteCount}<a href="{Permalink}#notes">{NoteCountWithLabel}</a>{/block:NoteCount}</li>
-    				<li>{block:Date}<a href="{Permalink}">{TimeAgo}</a>{/block:Date}</li>
-    			</ul>
-    		</div>
+    			<div class="like_reblog">
+                	    <ul>
+                			<li>{ReblogButton color="white" size="13"}</li>
+                			<li>{LikeButton color="white" size="13"}</li>
+                		</ul>
+       </div>
+	   
+	   <ul class="post_source">
+    			<li><a href="{Permalink}">{block:Date}Posted {Month} {DayOfMonthWithZero}, {Year}{/block:Date}</li></a>
+    			{block:NoteCount}
+    			    <li>|</li>
+    			    <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+    			{/block:NoteCount}
+    			
+    			{block:ContentSource}
+    			    <li>|</li>
+    				<li><a href="{SourceURL}" title="{SourceTitle}">Source</a></li>
+    			{/block:ContentSource}
+			</ul>
+			
+			<div class="post_notes">
+			    {block:PostNotes}<br>{PostNotes}{/block:PostNotes}
+			</div>
+	   </div>
+           <div class="divider_div"><span class="divider"></span></div>
 		{/block:Video}
+		
+		<!--Ask Posts-->
+		{block:Answer}
+		    <div class="post">
+		    	<div class="ask">
+			    	<img class="askpic" src="{AskerPortraitURL-64}">
+			    	<div class="askbody">
+			            <b>{Asker} asked:</b> {Question}
+			        </div>
+			        <div class="answer">
+			            {Answer}
+			        </div>
+		        </div>
+
+			    <div class="like_reblog">
+	                	    <ul>
+	                			<li>{ReblogButton color="white" size="13"}</li>
+	                			<li>{LikeButton color="white" size="13"}</li>
+	                		</ul>
+	       		</div>
+		   
+		   		<ul class="post_source">
+	    			<li><a href="{Permalink}">{block:Date}Posted {Month} {DayOfMonthWithZero}, {Year}{/block:Date}</li></a>
+	    			{block:NoteCount}
+	    			    <li>|</li>
+	    			    <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+	    			{/block:NoteCount}
+	    			
+	    			{block:ContentSource}
+	    			    <li>|</li>
+	    				<li><a href="{SourceURL}" title="{SourceTitle}">Source</a></li>
+	    			{/block:ContentSource}
+				</ul>
+				
+				<div class="post_notes">
+				    {block:PostNotes}<br>{PostNotes}{/block:PostNotes}
+				</div>
+		   </div>
+           <div class="divider_div"><span class="divider"></span></div>
+		{/block:Answer}
+		    
+		    <ul class="post_source">
+		    			<li><a href="{Permalink}">{block:Date}Posted {Month} {DayOfMonthWithZero}, {Year}{/block:Date}</li></a>
+		    			{block:NoteCount}
+		    			    <li style="color: {color:Date and Notes}">|</li>
+		    			    <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+		    			{/block:NoteCount}
+		    			
+		    			{block:ContentSource}
+		    			    <li style="color: {color:Date and Notes}">|</li>
+		    				<li><a href="{SourceURL}" title="{SourceTitle}">Source</a></li>
+		    			{/block:ContentSource}
+		    			<li style="float: right; padding: 0px;">{ReblogButton color="white" size="13"}</li>
+        			    <li style="float: right;">{LikeButton color="white" size="13"}</li>
+					</ul>
+                    
+                    <div class="post_notes">
+			            {block:PostNotes}<br>{PostNotes}{/block:PostNotes}
+			        </div>
+			        
+    		{block:HasTags}
+                    <ul class="tags">
+                        {block:Tags}
+                            <li>
+                                <a href="{TagURL}">#{Tag}</a>
+                            </li>
+                        {/block:Tags}
+                    </ul>
+                {/block:HasTags}
+                
+		<div class="divider_div"><span class="divider"></span></div>
     	{/block:Posts}
 	</div>
 </body>
